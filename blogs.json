@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "title": "The Future of AI in Everyday Applications",
+        "author": "Sarah Johnson",
+        "date": "June 15, 2023",
+        "category": "Technology",
+        "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643",
+        "excerpt": "Exploring how artificial intelligence is becoming integrated into our daily lives...",
+        "content": "<p>Artificial Intelligence is rapidly transforming the way we interact with technology in our daily lives. From smart assistants to automated systems, AI is becoming increasingly prevalent in various applications.</p><p>One of the most significant areas where AI is making an impact is in personal productivity tools. AI-powered algorithms can now help us organize our schedules, prioritize tasks, and even predict our needs based on past behavior.</p><p>Another exciting development is in the field of healthcare, where AI is being used to improve diagnosis accuracy and treatment recommendations. Machine learning models can analyze medical images and patient data to detect patterns that might be missed by human observers.</p>"
+    },
+    {
+        "id": 2,
+        "title": "Minimalist Design Trends for 2023",
+        "author": "Michael Chen",
+        "date": "June 10, 2023",
+        "category": "Design",
+        "image": "https://images.unsplash.com/photo-1497366754035-f200968a6e72",
+        "excerpt": "How less is becoming more in contemporary web and product design...",
+        "content": "<p>Minimalism continues to dominate design trends in 2023, with a focus on simplicity, functionality, and user experience. This approach is particularly evident in web and mobile interface design.</p><p>Key elements of minimalist design include ample white space, clear typography, and purposeful use of color. Designers are increasingly favoring clean layouts that guide users naturally through content without overwhelming them.</p><p>The rise of dark mode interfaces has also influenced minimalist design, with many applications offering both light and dark themes that maintain the same clean aesthetic while providing different user experiences.</p>"
+    },
+    {
+        "id": 3,
+        "title": "Remote Work: The New Normal",
+        "author": "Emma Rodriguez",
+        "date": "June 5, 2023",
+        "category": "Business",
+        "image": "traffic.jpg",
+        "excerpt": "How companies are adapting to permanent remote work policies...",
+        "content": "<p>The global shift to remote work has fundamentally changed how businesses operate. Companies are now embracing flexible work arrangements as a permanent solution rather than a temporary measure.</p><p>This transition has led to new challenges and opportunities in team collaboration, communication, and work-life balance. Organizations are investing in digital tools and platforms to maintain productivity and team cohesion in virtual environments.</p><p>The impact of remote work extends beyond just where people work - it's reshaping corporate culture, hiring practices, and even urban development as people choose to live farther from traditional office centers.</p>"
+    }
+]

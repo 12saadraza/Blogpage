@@ -1,0 +1,450 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlogSphere | Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="/" class="logo">
+                <i class="blog"></i> <!-- or whatever icon class you're using -->
+                Blogpage
+            </a>
+            
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="articles.html" class="nav-link">Articles</a>
+                <a href="aboutus.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" id="searchBox" placeholder="Search articles...">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+                <div class="search-dropdown" id="searchDropdown">
+                    <div class="search-results" id="searchResults"></div>
+                </div>
+            </div>
+            
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Discover & Share Amazing Stories</h1>
+            <p class="hero-subtitle">Join our community of passionate writers and curious readers exploring the world through words</p>
+            <div class="hero-btns">
+                <a href="articles.html" class="btn btn-primary">Explore Articles</a>
+                <a href="#" class="btn btn-primary" style="background: transparent; border: 2px solid white;">Become a Writer</a>
+            </div>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">1,250+</div>
+                    <div class="stat-label">Published Articles</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50K+</</div>
+                    <div class="stat-label">Monthly Readers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">120+</div>
+                    <div class="stat-label">Expert Writers</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="categories">
+        <div class="container">
+            <div class="section-title">
+                <h2>Explore Our Categories</h2>
+                <p>Discover content tailored to your interests across our diverse range of topics</p>
+            </div>
+            
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="category-title">Technology</h3>
+                    <p class="category-desc">Latest trends in software, hardware, and everything tech</p>
+                    <a href="display.html?id=1" class="read-more">Browse Articles <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 class="category-title">Lifestyle</h3>
+                    <p class="category-desc">Tips for healthier, happier, and more productive living</p>
+                    <a href="display.html?id=2" class="read-more">Browse Articles <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="category-title">Business</h3>
+                    <p class="category-desc">Insights on entrepreneurship, finance, and market trends</p>
+                    <a href="display.html?id=3" class="read-more">Browse Articles <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3 class="category-title">Design</h3>
+                    <p class="category-desc">Exploring creativity in graphic, web, and product design</p>
+                    <a href="display.html?id=4" class="read-more">Browse Articles <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+
+
+    <!-- Featured Articles -->
+    <section class="featured-articles">
+        <div class="container">
+            <div class="section-title">
+                <h2>Featured Articles</h2>
+                <p>Handpicked content from our top writers</p>
+            </div>
+            
+            <div class="articles-container">
+                <div class="carousel">
+                    <div class="carousel-track">
+                        <div class="article-card">
+                            <div class="article-img">
+                                <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Article image">
+                            </div>
+                            <div class="article-content">
+                                <div class="article-meta">
+                                    <span class="article-date">June 15, 2023</span>
+                                    <span class="article-category">Technology</span>
+                                </div>
+                                <h3 class="article-title">The Future of AI in Everyday Applications</h3>
+                                <p class="article-excerpt">Exploring how artificial intelligence is becoming integrated into our daily lives...</p>
+                                <a href="display.html?id=1" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        
+                        <div class="article-card">
+                            <div class="article-img">
+                                <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Article image">
+                            </div>
+                            <div class="article-content">
+                                <div class="article-meta">
+                                    <span class="article-date">June 10, 2023</span>
+                                    <span class="article-category">Design</span>
+                                </div>
+                                <h3 class="article-title">Minimalist Design Trends for 2023</h3>
+                                <p class="article-excerpt">How less is becoming more in contemporary web and product design...</p>
+                                <a href="display.html?id=2" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        
+                        <div class="article-card">
+                            <div class="article-img">
+                                <img src="traffic.jpg" alt="Article image">
+                            </div>
+                            <div class="article-content">
+                                <div class="article-meta">
+                                    <span class="article-date">June 5, 2023</span>
+                                    <span class="article-category">Business</span>
+                                </div>
+                                <h3 class="article-title">Remote Work: The New Normal</h3>
+                                <p class="article-excerpt">How companies are adapting to permanent remote work policies...</p>
+                                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-nav">
+                        <div class="carousel-dot active"></div>
+                        <div class="carousel-dot"></div>
+                        <div class="carousel-dot"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container newsletter-container">
+            <h2>Stay Updated</h2>
+            <p>Subscribe to our newsletter to receive the latest articles and news directly in your inbox</p>
+            
+            <form class="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="Your email address" required>
+                <button type="submit" class="newsletter-btn">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Popular Authors -->
+    <section class="popular-authors">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Popular Authors</h2>
+                <p>Meet the talented writers behind our best content</p>
+            </div>
+            
+            <div class="authors-grid">
+                <div class="author-card">
+                    <div class="author-avatar">
+                        <img src="profile-42914_640.png" alt="Author">
+                    </div>
+                    <h3 class="author-name">Bilal</h3>
+                    <p class="author-bio">Tech enthusiast and AI researcher</p>
+                    <div class="author-social">
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                
+                
+                <div class="author-card">
+                    <div class="author-avatar">
+                        <img src="profile-42914_640.png" alt="Author">
+                    </div>
+                    <h3 class="author-name">Jamal</h3>
+                    <p class="author-bio">Design director and UX expert passionate about minimalist interfaces</p>
+                    <div class="author-social">
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="author-card">
+                    <div class="author-avatar">
+                        <img src="profile-42914_640.png" alt="Author">
+                    </div>
+                    <h3 class="author-name">Omar</h3>
+                    <p class="author-bio">Business strategist helping startups scale effectively</p>
+                    <div class="author-social">
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                
+                <div class="author-card">
+                    <div class="author-avatar">
+                        <img src="profile-42914_640.png" alt="Author">
+                    </div>
+                    <h3 class="author-name">Ibrahim</h3>
+                    <p class="author-bio">Productivity coach and lifestyle writer focusing on work-life balance</p>
+                    <div class="author-social">
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-podcast"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Readers Say</h2>
+                <p>Hear from our community of passionate readers</p>
+            </div>
+            
+            <div class="testimonial-slider">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">Blogpage has completely transformed how I consume content online. The quality of articles is consistently high, and I always find something valuable to read.</p>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="profile-42914_640.png" alt="Reader">
+                        </div>
+                        <div class="author-info">
+                            <h4>Jessica Thompson</h4>
+                            <p>Marketing Director</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- In both index.html and articles.html -->
+<a href="display.html?id=1" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>About BlogSphere</h3>
+                    <p>We're a community of writers and readers passionate about sharing knowledge and stories that matter.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="article.html">Articles</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Write for Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Technology</a></li>
+                        <li><a href="#">Business</a></li>
+                        <li><a href="#">Design</a></li>
+                        <li><a href="#">Lifestyle</a></li>
+                        <li><a href="#">Health</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <p>123 Blog Street, San Francisco, CA 94107</p>
+                    <p>Email: hello@blogsphere.com</p>
+                    <p>Phone: (123) 456-7890</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Blogpage. All rights reserved. | <a href="display.html?id=1" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script src="resources.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // DOM Elements
+        const searchBox = document.getElementById('searchBox');
+        const searchDropdown = document.getElementById('searchDropdown');
+        const searchResults = document.getElementById('searchResults');
+
+        // Cache for articles data
+        let articlesCache = null;
+
+        // Fetch articles data
+        async function fetchArticles() {
+            if (articlesCache) return articlesCache;
+            
+            try {
+                const response = await fetch('blogs.json');
+                articlesCache = await response.json();
+                return articlesCache;
+            } catch (error) {
+                console.error('Error fetching articles:', error);
+                return [];
+            }
+        }
+
+        // Search function
+        async function performSearch(searchTerm) {
+            if (searchTerm.length < 2) {
+                searchResults.innerHTML = '';
+                searchDropdown.classList.remove('active');
+                return;
+            }
+
+            const articles = await fetchArticles();
+            const searchTermLower = searchTerm.toLowerCase();
+            
+            const filteredArticles = articles.filter(article => 
+                article.title.toLowerCase().includes(searchTermLower) ||
+                article.excerpt.toLowerCase().includes(searchTermLower) ||
+                article.category.toLowerCase().includes(searchTermLower)
+            );
+
+            if (filteredArticles.length === 0) {
+                searchResults.innerHTML = '<p class="no-results">No articles found</p>';
+            } else {
+                const resultHTML = filteredArticles.map(article => `
+                    <a href="display.html?id=${article.id}" class="search-result-item">
+                        <div class="search-result-img">
+                            <img src="${article.image}" alt="${article.title}">
+                        </div>
+                        <div class="search-result-content">
+                            <h3>${article.title}</h3>
+                            <p>${article.excerpt}</p>
+                            <span class="search-result-category">${article.category}</span>
+                        </div>
+                    </a>
+                `).join('');
+
+                searchResults.innerHTML = resultHTML;
+            }
+            
+            searchDropdown.classList.add('active');
+        }
+
+        // Event Listeners
+        searchBox.addEventListener('input', (e) => {
+            performSearch(e.target.value);
+        });
+
+        searchBox.addEventListener('focus', () => {
+            if (searchBox.value.length >= 2) {
+                searchDropdown.classList.add('active');
+            }
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.search-container')) {
+                searchDropdown.classList.remove('active');
+            }
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.nav-links') && !e.target.closest('.menu-toggle')) {
+                navLinks.classList.remove('active');
+            }
+        });
+
+        // Close menu when window is resized
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navLinks.classList.remove('active');
+            }
+        });
+    });
+    </script>
+</body>
+</html>

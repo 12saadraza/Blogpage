@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlogSphere | Article</title>
+        <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .blog-main {
+            max-width: 1200px;
+            margin: 80px auto 0;
+            padding: 40px 20px;
+        }
+
+        .blog-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 0 20px;
+        }
+
+        .blog-title {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            color: var(--dark-light);
+            margin-bottom: 30px;
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 500px;
+            border-radius: 15px;
+            object-fit: cover;
+            margin-bottom: 40px;
+        }
+
+        .blog-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .related-articles {
+            margin-top: 80px;
+            padding: 40px 20px;
+            border-top: 1px solid var(--light-gray);
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .blog-title {
+                font-size: 36px;
+            }
+            
+            .blog-image {
+                height: 300px;
+            }
+            
+            .blog-content {
+                font-size: 16px;
+                padding: 0 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Reuse header from other pages --><header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-blog"></i> BlogSphere
+            </a>
+            
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="articles.html" class="nav-link">Articles</a>
+                <a href="aboutus.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" id="searchBox" placeholder="Search articles...">
+                    <button class="search-icon">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="search-dropdown" id="searchDropdown">
+                    <div class="search-results" id="searchResults"></div>
+                </div>
+            </div>
+            
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Overlay -->
+   
+
+    <main class="blog-main">
+        <article>
+            <div class="blog-header">
+                <h1 class="blog-title" id="blogTitle"></h1>
+                <div class="blog-meta">
+                    <span id="blogAuthor"></span>
+                    <span id="blogDate"></span>
+                    <span id="blogCategory"></span>
+                </div>
+                <img src="" alt="Blog image" class="blog-image" id="blogImage">
+            </div>
+
+            <div class="blog-content" id="blogContent">
+                <!-- Blog content will be inserted here -->
+            </div>
+        </article>
+
+        <section class="related-articles">
+            <div class="section-title">
+                <h2>Related Articles</h2>
+                <p>You might also like these stories</p>
+            </div>
+            <div class="articles-grid" id="relatedArticles">
+                <!-- Related articles will be dynamically populated -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Reuse footer from other pages -->
+    <footer class="footer">
+        <!-- Copy footer from index.html -->
+    </footer>
+    <script src="resources.js"></script>
+    <script>
+        // Function to get URL parameters
+        function getUrlParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // Function to create related article card
+        function createRelatedArticleCard(article) {
+            return `
+                <div class="article-card">
+                    <div class="article-img">
+                        <img src="${article.image}" alt="${article.title}">
+                    </div>
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="article-date">${article.date}</span>
+                            <span class="article-category">${article.category}</span>
+                        </div>
+                        <h3 class="article-title">${article.title}</h3>
+                        <p class="article-excerpt">${article.excerpt}</p>
+                        <a href="display.html?id=${article.id}" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Load article content when page loads
+        document.addEventListener('DOMContentLoaded', async () => {
+            const articleId = getUrlParameter('id');
+            
+            try {
+                const response = await fetch('blogs.json');
+                const articles = await response.json();
+                
+                const currentArticle = articles.find(a => a.id === parseInt(articleId));
+                
+                if (currentArticle) {
+                    // Update page content
+                    document.title = `BlogSphere | ${currentArticle.title}`;
+                    document.getElementById('blogTitle').textContent = currentArticle.title;
+                    document.getElementById('blogAuthor').textContent = `By ${currentArticle.author}`;
+                    document.getElementById('blogDate').textContent = currentArticle.date;
+                    document.getElementById('blogCategory').textContent = currentArticle.category;
+                    document.getElementById('blogImage').src = currentArticle.image;
+                    document.getElementById('blogContent').innerHTML = currentArticle.content;
+                    
+                    // Find and display related articles (same category)
+                    const relatedArticles = articles
+                        .filter(a => a.id !== parseInt(articleId) && a.category === currentArticle.category)
+                        .slice(0, 3);
+                    
+                    document.getElementById('relatedArticles').innerHTML = relatedArticles
+                        .map(article => createRelatedArticleCard(article))
+                        .join('');
+                } else {
+                    document.querySelector('main').innerHTML = '<div class="container"><h2>Article not found</h2></div>';
+                }
+            } catch (error) {
+                console.error('Error loading article:', error);
+                document.querySelector('main').innerHTML = '<div class="container"><h2>Error loading article</h2></div>';
+            }
+        });
+
+        // Search functionality
+        const searchIcon = document.querySelector('.search-icon');
+        const searchOverlay = document.getElementById('searchOverlay');
+        const closeSearch = document.getElementById('closeSearch');
+        const searchInput = document.getElementById('searchInput');
+        const searchResults = document.getElementById('searchResults');
+
+        // Open search overlay
+        searchIcon.addEventListener('click', () => {
+            searchOverlay.classList.add('active');
+            searchInput.focus();
+        });
+
+        // Close search overlay
+        closeSearch.addEventListener('click', () => {
+            searchOverlay.classList.remove('active');
+            searchInput.value = '';
+            searchResults.innerHTML = '';
+        });
+
+        // Close search overlay with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && searchOverlay.classList.contains('active')) {
+                searchOverlay.classList.remove('active');
+                searchInput.value = '';
+                searchResults.innerHTML = '';
+            }
+        });
+
+        // Search functionality
+        searchInput.addEventListener('input', async () => {
+            const searchTerm = searchInput.value.toLowerCase().trim();
+            
+            if (searchTerm.length < 2) {
+                searchResults.innerHTML = '';
+                return;
+            }
+
+            try {
+                const response = await fetch('blogs.json');
+                const articles = await response.json();
+                
+                const filteredArticles = articles.filter(article => 
+                    article.title.toLowerCase().includes(searchTerm) ||
+                    article.excerpt.toLowerCase().includes(searchTerm) ||
+                    article.category.toLowerCase().includes(searchTerm)
+                );
+
+                if (filteredArticles.length === 0) {
+                    searchResults.innerHTML = '<p class="no-results">No articles found</p>';
+                    return;
+                }
+
+                searchResults.innerHTML = filteredArticles.map(article => `
+                    <a href="display.html?id=${article.id}" class="search-result-item">
+                        <div class="search-result-img">
+                            <img src="${article.image}" alt="${article.title}">
+                        </div>
+                        <div class="search-result-content">
+                            <h3>${article.title}</h3>
+                            <p>${article.excerpt}</p>
+                            <span class="search-result-category">${article.category}</span>
+                        </div>
+                    </a>
+                `).join('');
+            } catch (error) {
+                console.error('Error searching articles:', error);
+                searchResults.innerHTML = '<p class="no-results">Error searching articles</p>';
+            }
+        });
+    </script>
+</body>
+</html>
